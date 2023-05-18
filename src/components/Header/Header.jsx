@@ -37,20 +37,25 @@ const Header = () => {
   }, [user]);
 
   return (
-    <div className=" navbar-color py-2 mb-0">
+    <div className="navbar-color py-2 mb-0">
       <Navbar open={open} expand="lg">
         <Container>
           <Link to="/" className="navbar-brand text-white fw-bold fs-3">
-            <img className="img-fluid" style={{ height: "60px", width: "120px" }} src={logo} alt="" />
+            <img
+              className="img-fluid"
+              style={{ height: "60px", width: "120px" }}
+              src={logo}
+              alt=""
+            />
           </Link>
           <Navbar.Toggle onClick={() => setOpen(!open)} />
           <Navbar.Collapse>
-            <Nav className="ms-auto text-black fs-5 font-style gap-4">
+            <Nav className="ms-auto text-black fs-5 font-style">
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "active-link text-decoration-none"
-                    : "link text-decoration-none text-black"
+                    ? "active-link text-decoration-none me-4 py-2"
+                    : "link text-decoration-none text-black me-4 py-2"
                 }
                 to="/"
               >
@@ -59,8 +64,8 @@ const Header = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "active-link text-decoration-none"
-                    : "link text-decoration-none text-black"
+                    ? "active-link text-decoration-none me-4 py-2"
+                    : "link text-decoration-none text-black me-4 py-2"
                 }
                 to="/blog"
               >
@@ -69,8 +74,8 @@ const Header = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "active-link text-decoration-none"
-                    : "link text-decoration-none text-black"
+                    ? "active-link text-decoration-none me-4 py-2"
+                    : "link text-decoration-none text-black me-4 py-2"
                 }
                 to="/allToys"
               >
@@ -78,12 +83,12 @@ const Header = () => {
               </NavLink>
 
               {user ? (
-                <div>
+                <div className="d-flex flex-column flex-sm-row align-items-start align-items-sm-center ">
                   <NavLink
                     className={({ isActive }) =>
                       isActive
-                        ? "active-link text-decoration-none me-3"
-                        : "link text-decoration-none text-black me-3"
+                        ? "active-link text-decoration-none me-4 py-2"
+                        : "link text-decoration-none text-black me-4 py-2"
                     }
                     to="/myToys"
                   >
@@ -92,8 +97,8 @@ const Header = () => {
                   <NavLink
                     className={({ isActive }) =>
                       isActive
-                        ? "active-link text-decoration-none me-3"
-                        : "link text-decoration-none text-black me-3"
+                        ? "active-link text-decoration-none me-4 py-2"
+                        : "link text-decoration-none text-black me-4 py-2"
                     }
                     to="/addToys"
                   >
@@ -104,8 +109,8 @@ const Header = () => {
                     onClick={handleLogOut}
                     className={({ isActive }) =>
                       isActive
-                        ? "active-link text-decoration-none"
-                        : "link text-decoration-none text-black"
+                        ? "active-link text-decoration-none me-4 py-2"
+                        : "link text-decoration-none text-black me-4 py-2"
                     }
                     to="/login"
                   >
@@ -120,12 +125,12 @@ const Header = () => {
                   />
                 </div>
               ) : (
-                <div className="">
+                <div className="me-4 py-2">
                   <NavLink
                     className={({ isActive }) =>
                       isActive
-                        ? "active-link text-decoration-none me-3"
-                        : "link text-decoration-none text-black me-3"
+                        ? "active-link text-decoration-none me-4 py-2"
+                        : "link text-decoration-none text-black me-4 py-2"
                     }
                     to="/login"
                   >
