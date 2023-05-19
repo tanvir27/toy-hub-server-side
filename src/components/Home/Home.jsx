@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaStarHalf, FaStarHalfAlt } from "react-icons/fa";
 import { HiLocationMarker, HiOutlineMail, HiPhone } from "react-icons/hi";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -229,11 +229,9 @@ const Home = () => {
             </TabPanel>
           </Tabs>
         </div>
-
         {/* catagories  section end */}
 
         {/* Reviews section start here  */}
-
         <div className="py-2">
           <h1 className="text-color fw-bold text-center mb-5">
             <i>
@@ -260,7 +258,7 @@ const Home = () => {
                 I'm thrilled with the excellent customer service I received.
                 Highly recommended!"
               </p>
-              <div className="mb-0 mb-lg-3">
+              <div className="mb-0 mb-lg-3 text-warning">
                 <FaStar className="star-icon" />
                 <FaStar className="star-icon" />
                 <FaStar className="star-icon" />
@@ -289,19 +287,19 @@ const Home = () => {
                 I'm thrilled with the excellent customer service I received.
                 Highly recommended!"
               </p>
-              <div className="mb-0 mb-lg-3">
+              <div className="mb-0 mb-lg-3 text-warning">
                 <FaStar className="star-icon" />
                 <FaStar className="star-icon" />
                 <FaStar className="star-icon" />
                 <FaStar className="star-icon" />
-                <FaStar className="star-icon" />
+                <FaStarHalfAlt className="star-icon" />
               </div>
               <div>
                 <p className="text-color fw-semibold">William Harry</p>
                 <p className="text-color fw-semibold">Software Developer</p>
               </div>
             </div>
-            <div className="card text-center">
+            <div className="card text-center text-warning">
               <div className="mt-0 mt-lg-5">
                 {" "}
                 <img
