@@ -15,8 +15,7 @@ const Blog = () => {
               <div class="card border border-0">
                 <div class="card-body">
                   <h5 class="card-title text-primary">
-                    Tell us the differences between uncontrolled and controlled
-                    components.
+                    Tell us the 
                   </h5>
                   <p class="card-text">
                     Controlled components refer to components that have their
