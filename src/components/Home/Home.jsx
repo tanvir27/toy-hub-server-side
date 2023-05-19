@@ -3,9 +3,11 @@ import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
-import { Container, Row, Col, Image, Form, Button } from "react-bootstrap";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+
+import { FaStar } from "react-icons/fa";
 import { HiLocationMarker, HiOutlineMail, HiPhone } from "react-icons/hi";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 
 const Home = () => {
   // const loader = useLoaderData();
@@ -142,10 +144,200 @@ const Home = () => {
 
         {/* gallery  section end */}
 
+        {/* catagories section start */}
+
+        <div className="text-center my-2 my-lg-5">
+          <h1 className="fw-bold text-color mb-3">Shop By Category</h1>
+          <Tabs>
+            <div className="fw-bold text-color fst-italic">
+              <TabList>
+                <Tab>Truck Car</Tab>
+                <Tab>Mini Police Car</Tab>
+                <Tab>Sports Car</Tab>
+              </TabList>
+            </div>
+
+            <TabPanel>
+              <div className="container row row-cols-1 row-cols-md-2 mt-2 mx-auto">
+                <div className="card mb-3">
+                  <div className="row g-0 py-2">
+                    <div className="col-md-6">
+                      <img
+                        src="https://images.unsplash.com/photo-1575574419906-41458fc83949?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fHRveSUyMHRydWNrJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                        className="img-fluid  rounded "
+                        style={{ height: "100%" }}
+                        alt=""
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <div className="card-body">
+                        <h5 className="card-title fw-bold text-color">
+                          Truck Car X
+                        </h5>
+                        <div className="d-flex justify-content-between mt-3">
+                          <p className="">Price: $ 120</p>
+                          <p className="">Ratings: ***** </p>
+                        </div>
+                        <div className="text-center mt-2">
+                          <Link>
+                            <button type="button" className="btn w-75 btn-info">
+                              View Details
+                            </button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="card mb-3">
+                  <div className="row g-0 py-2">
+                    <div className="col-md-6">
+                      <img
+                        src="https://images.unsplash.com/photo-1575574419906-41458fc83949?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fHRveSUyMHRydWNrJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                        className="img-fluid  rounded "
+                        style={{ height: "100%" }}
+                        alt=""
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <div className="card-body">
+                        <h5 className="card-title fw-bold text-color">
+                          Truck Car X
+                        </h5>
+                        <div className="d-flex justify-content-between mt-3">
+                          <p className="">Price: $ 120</p>
+                          <p className="">Ratings: ***** </p>
+                        </div>
+                        <div className="text-center mt-2">
+                          <Link>
+                            <button type="button" className="btn w-75 btn-info">
+                              View Details
+                            </button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <h2>Any content 2</h2>
+            </TabPanel>
+            <TabPanel>
+              <h2>Any content 3</h2>
+            </TabPanel>
+          </Tabs>
+        </div>
+
+        {/* catagories  section end */}
+
+        {/* Reviews section start here  */}
+
+        <div className="py-2">
+          <h1 className="text-color fw-bold text-center mb-5">
+            <i>
+              {" "}
+              <span>Happy</span>{" "}
+              <span className="text-warning"> Clients says</span>
+            </i>
+          </h1>
+          <div className="container row row-cols-1 row-cols-md-3  mx-auto">
+            <div className="card text-center">
+              <div className="mt-0 mt-lg-5">
+                {" "}
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHByb2ZpbGUlMjBpbWdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                  className="rounded-circle"
+                  alt="Client"
+                  style={{ height: "100px", width: "100px" }}
+                />
+              </div>
+              <p className="mt-3">
+                "I absolutely love the toy cars I purchased from this website.
+                The quality is outstanding, and the attention to detail is
+                impressive. My kids are having a blast playing with them, and
+                I'm thrilled with the excellent customer service I received.
+                Highly recommended!"
+              </p>
+              <div className="mb-0 mb-lg-3">
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+              </div>
+              <div>
+                <p className="text-color fw-semibold">John Doe</p>
+                <p className="text-color fw-semibold">Doctor</p>
+              </div>
+            </div>
+            <div className="card text-center">
+              <div className="mt-0 mt-lg-5">
+                {" "}
+                <img
+                  src="https://images.unsplash.com/photo-1617441356293-de82acf3552f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGUlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                  className="rounded-circle"
+                  alt="Client"
+                  style={{ height: "100px", width: "100px" }}
+                />
+              </div>
+              <p className="mt-3">
+                "I absolutely love the toy cars I purchased from this website.
+                The quality is outstanding, and the attention to detail is
+                impressive. My kids are having a blast playing with them, and
+                I'm thrilled with the excellent customer service I received.
+                Highly recommended!"
+              </p>
+              <div className="mb-0 mb-lg-3">
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+              </div>
+              <div>
+                <p className="text-color fw-semibold">William Harry</p>
+                <p className="text-color fw-semibold">Software Developer</p>
+              </div>
+            </div>
+            <div className="card text-center">
+              <div className="mt-0 mt-lg-5">
+                {" "}
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMGltZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                  className="rounded-circle"
+                  alt="Client"
+                  style={{ height: "100px", width: "100px" }}
+                />
+              </div>
+              <p className="mt-3">
+                "I absolutely love the toy cars I purchased from this website.
+                The quality is outstanding, and the attention to detail is
+                impressive. My kids are having a blast playing with them, and
+                I'm thrilled with the excellent customer service I received.
+                Highly recommended!"
+              </p>
+              <div className="mb-0 mb-lg-3">
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+              </div>
+              <div>
+                <p className="text-color fw-semibold">Harry state</p>
+                <p className="text-color fw-semibold">Banker</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Reviews section end here  */}
+
         {/* contact us section  */}
 
         <div className="my-2 my-lg-5">
-          <h1 className="text-center text-color fw-bold mt-5 mt-lg-0">
+          <h1 className="text-center text-color fw-bold pt-3 pb-4 mt-lg-0">
             Any Problem With Our Gadget Just Contact Us
           </h1>
           <div className="row">
