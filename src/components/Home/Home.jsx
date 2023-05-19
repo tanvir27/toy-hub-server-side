@@ -8,8 +8,10 @@ import { FaStar, FaStarHalf, FaStarHalfAlt } from "react-icons/fa";
 import { HiLocationMarker, HiOutlineMail, HiPhone } from "react-icons/hi";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import useTitle from "../../hooks/useTitle";
 
 const Home = () => {
+  useTitle('Home')
   // const loader = useLoaderData();
   return (
     <div className="bg-color">

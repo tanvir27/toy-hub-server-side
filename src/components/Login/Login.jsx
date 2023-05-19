@@ -4,13 +4,14 @@ import { FaGithub, FaGoogle, FaMailBulk } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const { LoginUser, googleLogin, githubLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-
+  useTitle('LogIn')
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
