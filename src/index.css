@@ -66,6 +66,9 @@ p {
 .footer-color{
    background-color: #D8B4FE;
 }
+.card-body-color{
+   background-color: #D8B4FE;
+}
 .body-color{
    background-color: #f8f5fca9;
    
@@ -82,5 +85,5 @@ p {
   height: 200px; 
 }
 .card-container {
-  height: 300px;
+  height: 180px;
 }

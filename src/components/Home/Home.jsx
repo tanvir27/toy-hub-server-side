@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 import { Container, Row, Col, Image, Form, Button } from "react-bootstrap";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { HiLocationMarker, HiOutlineMail, HiPhone } from "react-icons/hi";
 
 const Home = () => {
   // const loader = useLoaderData();
@@ -143,66 +144,76 @@ const Home = () => {
 
         {/* contact us section  */}
 
-        <div className="contact-us pb-lg-5">
-          <h1 className="text-center fw-bold text-secondary pb-4">
-            Connect with us
+        <div className="my-2 my-lg-5">
+          <h1 className="text-center text-color fw-bold mt-5 mt-lg-0">
+            Any Problem With Our Gadget Just Contact Us
           </h1>
-          <Container>
-            <Row className="shadow border py-2">
-              <Col md={6}>
-                <div className="mb-4">
-                  <h2 className="text-center fw-bold">Contact</h2>
+          <div className="row">
+            <div className="col-md-4 col-sm-12">
+              <div className=" py-5">
+                <img
+                  src="https://img.freepik.com/free-vector/call-center-manager-taking-calls_74855-19704.jpg?w=900&t=st=1684490241~exp=1684490841~hmac=8ed4e8d12372d43e42398fd439338d0d48be7164be751b72d907991a4ddcff7a"
+                  className="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="col-md-8 col-sm-12">
+              <div className="row">
+                <div className="col-md-6 sol-sm-12  p-4">
+                  <div className="card-body-color card-container  p-4">
+                    <h3 className="text-white">Face-to-Face support</h3>
+                    <p>product is in warranty, we're here to help.</p>
+                    <div className="d-flex gap-4">
+                      <HiLocationMarker className="fs-2"></HiLocationMarker>
+
+                      <button className="btn btn-dark">
+                        Find Our All Service Center
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="mb-4">
-                  <p>
-                    <FaMapMarkerAlt /> Address: Ahmednagar, Paikpara, Jonaki
-                    Road, Mirpur-1
-                  </p>
-                  <p>
-                    <FaPhoneAlt /> Phone: 01776-858436
-                  </p>
-                  <p>
-                    <FaEnvelope /> Email: kitchenhouse@gmail.com
-                  </p>
+                <div className="col-md-6 sol-sm-12  p-4">
+                  <div className="card-body-color card-container  p-4">
+                    <h3 className="text-white pb-3">24 Hours Phone </h3>
+
+                    <div className="d-flex gap-4">
+                      <HiPhone className="fs-2"></HiPhone>
+
+                      <p className="fw-semibold">01776858436</p>
+                    </div>
+                    <p>09:00 AM to 06:00 PM [Everyday]</p>
+                  </div>
                 </div>
-                <Form>
-                  <Form.Group>
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter your name" />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter your email" />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Label>Message</Form.Label>
-                    <Form.Control
-                      as="textarea"
-                      rows={5}
-                      placeholder="Enter your message"
-                    />
-                  </Form.Group>
-                  <Button className="my-3 w-25" variant="primary" type="submit">
-                    Submit
-                  </Button>
-                </Form>
-              </Col>
-              <Col md={6}>
-                <div className="mb-4">
-                  <h2 className="fw-bold text-center">Find Us</h2>
+                <div className="col-md-6 sol-sm-12  p-4">
+                  <div className="card-body-color card-container  p-4">
+                    <h3 className="text-white pb-3">E-Mail Support</h3>
+
+                    <div className="d-flex gap-4">
+                      <HiOutlineMail className="fs-3"></HiOutlineMail>
+
+                      <p className=" fw-bold">toyHub@gmail.com</p>
+                    </div>
+                    <p>We'll respond within 24 hours of your request.</p>
+                  </div>
                 </div>
-                <div style={{ height: "400px", width: "100%" }}>
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4644.050169423253!2d90.36039884853662!3d23.794755127667628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c15d8b028891%3A0x3edc39f46d1449c8!2sJonaki%20Road!5e0!3m2!1sen!2sbd!4v1683136515717!5m2!1sen!2sbd"
-                    style={{ height: "100%", width: "100%", border: "0" }}
-                    allowfullscreen=""
-                    loading="lazy"
-                  ></iframe>
+                <div className="col-md-6 sol-sm-12  p-4">
+                  <div className="card-body-color card-container  p-4">
+                    <h3 className="text-white pb-3">WhatsApp Us</h3>
+
+                    <div className="d-flex gap-4">
+                      <HiPhone className="fs-2"></HiPhone>
+
+                      <p className="fw-semibold">01776858436</p>
+                    </div>
+                    <p>09:00 AM to 06:00 PM [Everyday]</p>
+                  </div>
                 </div>
-              </Col>
-            </Row>
-          </Container>
+              </div>
+            </div>
+          </div>
         </div>
+
         {/* contact us section  */}
       </div>
     </div>
