@@ -47,9 +47,7 @@ h1 {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -67,4 +65,22 @@ p {
 }
 .footer-color{
    background-color: #D8B4FE;
+}
+.body-color{
+   background-color: #f8f5fca9;
+   
+}
+.body-color:hover{
+   background-color: #cde6dda9;
+   cursor: pointer;
+   transition: 0.1;
+}
+.text-color{
+   color: #673b96;
+}
+.gallery-image {
+  height: 200px; 
+}
+.card-container {
+  height: 300px;
 }
