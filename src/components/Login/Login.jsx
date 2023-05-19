@@ -50,60 +50,69 @@ const Login = () => {
     <div>
       <section className="py-5 bg-color">
         <Container>
-          <div className="d-flex justify-content-center">
-            <div className="col-md-6">
-              <h2 className="text-center mb-4 fw-bold">LogIn to Your Account</h2>
+          <div className="">
+            <div className="d-flex justify-content-center ">
+              <div className="col-md-6 ">
+                <h2 className="text-center mb-4 fw-bold">
+                  LogIn to Your Account
+                </h2>
 
-              <Form onSubmit={handleLogin}>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email"
-                  />
-                </Form.Group>
+                <Form onSubmit={handleLogin}>
+                  <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                      type="email"
+                      name="email"
+                      placeholder="Enter your email"
+                    />
+                  </Form.Group>
 
-                <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                  />
-                </Form.Group>
+                  <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                    />
+                  </Form.Group>
 
-                <div className="text-center">
-                  <Button className="w-25 mt-2" variant="primary" type="submit">
-                    Login
-                  </Button>
+                  <div className="text-center">
+                    <Button
+                      className="w-25 mt-2"
+                      variant="primary"
+                      type="submit"
+                    >
+                      Login
+                    </Button>
+                  </div>
+                </Form>
+                <div>
+                  <p className="text-danger text-center mt-3 fw-bold">
+                    {error ? (
+                      <span className="p-1 border">
+                        Wrong Input & Password{" "}
+                      </span>
+                    ) : (
+                      ""
+                    )}
+                  </p>
                 </div>
-              </Form>
-              <div>
-                <p className="text-danger text-center mt-3 fw-bold">
-                  {error ? (
-                    <span className="p-1 border">Wrong Input & Password </span>
-                  ) : (
-                    ""
-                  )}
-                </p>
-              </div>
-              <div className="text-center mt-2 text-primary">
-                <p>
-                  Don't have any account? Click here to{" "}
-                  <Link to="/register">Register</Link>{" "}
-                </p>
+                <div className="text-center mt-2 text-primary">
+                  <p>
+                    Don't have any account? Click here to{" "}
+                    <Link to="/register">Register</Link>{" "}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="container">
-            <div className="text-center mb-2">
-              <Button onClick={handleGoogleLogin} variant="primary">
-                <FaGoogle className="me-2" />
-                Sign in with Google
-              </Button>
+            <div className="container">
+              <div className="text-center mb-2">
+                <Button onClick={handleGoogleLogin} variant="primary">
+                  <FaGoogle className="me-2" />
+                  Sign in with Google
+                </Button>
+              </div>
             </div>
-         
           </div>
         </Container>
       </section>

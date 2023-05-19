@@ -174,7 +174,7 @@ const Home = () => {
                         <h5 className="card-title fw-bold text-color">
                           Truck Car X
                         </h5>
-                        <div className="d-flex justify-content-between mt-3">
+                        <div className="mt-3">
                           <p className="">Price: $ 120</p>
                           <p className="">Ratings: ***** </p>
                         </div>
@@ -204,7 +204,7 @@ const Home = () => {
                         <h5 className="card-title fw-bold text-color">
                           Truck Car X
                         </h5>
-                        <div className="d-flex justify-content-between mt-3">
+                        <div className="mt-3">
                           <p className="">Price: $ 120</p>
                           <p className="">Ratings: ***** </p>
                         </div>
@@ -299,7 +299,7 @@ const Home = () => {
                 <p className="text-color fw-semibold">Software Developer</p>
               </div>
             </div>
-            <div className="card text-center text-warning">
+            <div className="card text-center ">
               <div className="mt-0 mt-lg-5">
                 {" "}
                 <img
@@ -316,12 +316,12 @@ const Home = () => {
                 I'm thrilled with the excellent customer service I received.
                 Highly recommended!"
               </p>
-              <div className="mb-0 mb-lg-3">
+              <div className="mb-0 mb-lg-3 text-warning">
                 <FaStar className="star-icon" />
                 <FaStar className="star-icon" />
                 <FaStar className="star-icon" />
                 <FaStar className="star-icon" />
-                <FaStar className="star-icon" />
+                <FaStar className="star-icon " />
               </div>
               <div>
                 <p className="text-color fw-semibold">Harry state</p>

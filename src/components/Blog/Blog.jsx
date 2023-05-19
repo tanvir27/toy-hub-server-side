@@ -1,88 +1,92 @@
 const Blog = () => {
   return (
-    <div className="bg-color pb-5">
+    <div className="bg-color py-5">
       <div ClassName="">
         <div className="container">
-        
           <div className="">
-            <h1 className="text-danger fw-bold text-center">
+            <h1 className="text-danger fw-bold mb-4 text-center">
               {" "}
               Frequently Asked Questions
             </h1>
           </div>
-          <div class="row row-cols-1 row-cols-md-2 g-2 mt-2">
-            <div class="col rounded shadow p-3">
-              <div class="card border border-0">
-                <div class="card-body">
-                  <h5 class="card-title text-primary">
-                    Tell us the 
+          <div className="row row-cols-1 row-cols-md-2 g-2 mt-2">
+            <div className="col rounded shadow p-3">
+              <div className="card border border-0">
+                <div className="card-body">
+                  <h5 className="card-title text-primary">
+                    What is an access token and refresh token? How do they work
+                    and where should we store them on the client-side?
                   </h5>
-                  <p class="card-text">
-                    Controlled components refer to components that have their
-                    state and behavior controlled by the parent component. These
-                    components rely on props passed down from the parent
-                    component to update their state and behavior. Uncontrolled
-                    components refer to components that manage their own state
-                    internally.
+                  <p className="card-text">
+                    Access tokens are short-lived credentials used to access
+                    protected resources, while refresh tokens are long-lived
+                    credentials used to obtain new access tokens when the
+                    current ones expire. Access tokens provide temporary
+                    authorization, while refresh tokens allow for seamless
+                    renewal of access tokens without requiring reauthentication.
+                    It's recommended to store them securely on the client-side,
+                    such as in secure HTTP-only cookies or in local storage with
+                    appropriate security measures.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col rounded shadow p-3">
-              <div class="card border border-0">
-                <div class="card-body">
-                  <h5 class="card-title  text-primary">
-                    How to validate React props using PropTypes?
+            <div className="col rounded shadow p-3">
+              <div className="card border border-0">
+                <div className="card-body">
+                  <h5 className="card-title  text-primary">
+                    Compare SQL and NoSQL databases?
                   </h5>
-                  <p class="card-text">
-                    React provides a library called PropTypes that allows you to
-                    validate the props passed to your components. PropTypes
-                    allows you to specify the data type and structure of the
-                    props that your component expects, and will throw an error
-                    in the console if the props passed to the component do not
-                    match the specified data type or structure. To use PropTypes
-                    in our React component, we need to import the PropTypes
-                    module from the 'prop-types' package and then define the
-                    propTypes property on our component.
+                  <p className="card-text">
+                    SQL databases are based on a structured schema, enforce data
+                    integrity, use SQL as the query language, and support
+                    relationships between tables. They are vertically scalable
+                    and provide strong transactional support. NoSQL databases
+                    offer flexibility in schema design, horizontal scalability,
+                    use various query languages, and excel at handling large
+                    amounts of data and high-performance operations.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col rounded shadow p-3">
-              <div class="card border border-0">
-                <div class="card-body">
-                  <h5 class="card-title  text-primary">
-                    Tell us the difference between nodejs and express js.
+            <div className="col rounded shadow p-3">
+              <div className="card border border-0">
+                <div className="card-body">
+                  <h5 className="card-title  text-primary">
+                    What is express js? What is Nest JS ?
                   </h5>
-                  <p class="card-text">
-                    Node.js and Express.js are both popular technologies used
-                    for building web applications in JavaScript. However, they
-                    serve different purposes and have distinct functionalities.
-                    NodeJS is an event-driven, non-blocking I/O model using
-                    JavaScript as its main language. It helps to build scalable
-                    network applications. Express is a minimal and flexible
-                    Node. js web application framework that provides a robust
-                    set of features for web and mobile applications.
+                  <p className="card-text">
+                    Express.js is a minimal and flexible web application
+                    framework for Node.js. It provides a simple and intuitive
+                    way to build web applications and APIs. It is lightweight,
+                    unopinionated, and allows developers to handle HTTP
+                    requests, define routes, and implement middleware. NestJS
+                    follows the modular architecture pattern and provides
+                    features like dependency injection, decorators, and powerful
+                    CLI tools to simplify development and enhance code
+                    maintainability. It is often used to build enterprise-grade
+                    applications.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col rounded shadow p-3">
-              <div class="card border border-0">
-                <div class="card-body">
-                  <h5 class="card-title  text-primary">
-                    What is a custom hook, and why will you create a custom
-                    hook?
+            <div className="col rounded shadow p-3">
+              <div className="card border border-0">
+                <div className="card-body">
+                  <h5 className="card-title  text-primary">
+                    What is MongoDB aggregate and how does it work
                   </h5>
-                  <p class="card-text">
-                    In React, a custom hook is a JavaScript function that starts
-                    with the prefix "use" and allows you to share logic between
-                    components. A custom hook allows you to extract reusable
-                    logic from a component, making your code more modular, and
-                    making it easier to share functionality between different
-                    components. We would create a custom hook to avoid code
-                    duplication, increase reusability, and make our code more
-                    maintainable.
+                  <p className="card-text">
+                    In MongoDB, the aggregate function is used to perform
+                    advanced data aggregation operations on the data stored in a
+                    collection. It allows you to process and transform
+                    documents, perform calculations, and generate aggregated
+                    results based on specified criteria. The aggregate function
+                    works by taking an array of stages as input. Each stage
+                    represents a specific operation or transformation that is
+                    applied to the documents in the collection. The stages are
+                    executed sequentially, and the output of one stage serves as
+                    the input for the next stage.
                   </p>
                 </div>
               </div>
