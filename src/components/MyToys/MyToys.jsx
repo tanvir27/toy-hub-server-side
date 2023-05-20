@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import useTitle from "../../hooks/useTitle";
 
 import SingleToy from "../SingleToy/SingleToy";
 import UpdateToyDetails from "../UpdateToyDetails/UpdateToyDetails";
 
 const MyToys = () => {
-const [modalShow, setModalShow] = React.useState(false);
+  const [modalShowDetails, setModalShowDetails] = useState(false);
+  const [modalShowEdit, setModalShowEdit] = useState(false);
+
   useTitle("My Toys");
   const toysData = [
     {
@@ -43,7 +45,7 @@ const [modalShow, setModalShow] = React.useState(false);
                   <th>Email</th>
                   <th>Sub-category</th>
                   <th>Price</th>
-                  <th>Rating 1</th>
+                  <th>Rating </th>
                   <th> Quantity</th>
                   <th>Action 1</th>
                   <th>Action 2</th>
@@ -65,14 +67,14 @@ const [modalShow, setModalShow] = React.useState(false);
                     <td>{toy.quantity}</td>
                     <td>
                       <button
-                        className="btn btn-info text-white "
-                        onClick={() => setModalShow(true)}
+                        className="btn btn-info text-white"
+                        onClick={() => setModalShowEdit(true)}
                       >
                         Edit
                       </button>
                       <UpdateToyDetails
-                        show={modalShow}
-                        onHide={() => setModalShow(false)}
+                        show={modalShowEdit}
+                        onHide={() => setModalShowEdit(false)}
                       />
                     </td>
                     <td>
@@ -83,13 +85,13 @@ const [modalShow, setModalShow] = React.useState(false);
                     <td>
                       <button
                         className="btn btn-info text-white"
-                        onClick={() => setModalShow(true)}
+                        onClick={() => setModalShowDetails(true)}
                       >
                         View Details
                       </button>
                       <SingleToy
-                        show={modalShow}
-                        onHide={() => setModalShow(false)}
+                        show={modalShowDetails}
+                        onHide={() => setModalShowDetails(false)}
                       />
                     </td>
                   </tr>
