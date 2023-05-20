@@ -2,7 +2,8 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 const SingleToy = (props) => {
-   const data = props.data;
+    const data = props.data;
+    console.log(data);
   return (
     <div>
       <Modal

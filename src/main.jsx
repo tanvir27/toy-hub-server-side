@@ -15,7 +15,7 @@ import AddToys from "./components/AddToys/AddToys";
 import MyToys from "./components/MyToys/MyToys";
 import AllToys from "./components/AllToys/AllToys";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-
+import UpdateToyDetails from "./components/UpdateToyDetails/UpdateToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -26,10 +26,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        // loader: () =>
-        //   fetch(
-        //     "https://kitchen-house-server-side-tanvir27.vercel.app/chefDetails"
-        //   ),
       },
       {
         path: "/register",
@@ -56,21 +52,19 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/editToys",
+        element: (
+          <PrivateRoute>
+            <UpdateToyDetails />
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/allToys",
         element: <AllToys></AllToys>,
+        loader: () => fetch("http://localhost:5000/toys"),
       },
-      // {
-      //   path: "/recipe/:id",
-      //   element: (
-      //     <PrivateRoute>
-      //       <Recipe></Recipe>
-      //     </PrivateRoute>
-      //   ),
-      //   loader: ({ params }) =>
-      //     fetch(
-      //       `https://kitchen-house-server-side-tanvir27.vercel.app/chefDetails/${params.id}`
-      //     ),
-      // },
+
       {
         path: "/blog",
         element: <Blog></Blog>,

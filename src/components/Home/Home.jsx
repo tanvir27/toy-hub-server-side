@@ -19,10 +19,10 @@ const Home = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("data.json")
+    fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log("home data: ",data);
         setData(data);
       });
   }, []);
@@ -207,21 +207,21 @@ const Home = () => {
             <TabPanel>
               <div className="container row row-cols-1 row-cols-md-3 mt-2 mx-auto">
                 {categorizedToys.map((data) => (
-                  <ToyCard data={data}></ToyCard>
+                  <ToyCard key={data._id} data={data}></ToyCard>
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
               <div className="container row row-cols-1 row-cols-md-3 mt-2 mx-auto">
                 {categorizedToys.map((data) => (
-                  <ToyCard data={data}></ToyCard>
+                  <ToyCard key={data._id} data={data}></ToyCard>
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
               <div className="container row row-cols-1 row-cols-md-3 mt-2 mx-auto">
                 {categorizedToys.map((data) => (
-                  <ToyCard data={data}></ToyCard>
+                  <ToyCard key={data._id} data={data}></ToyCard>
                 ))}
               </div>
             </TabPanel>

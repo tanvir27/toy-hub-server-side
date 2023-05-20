@@ -1,6 +1,5 @@
 import React from "react";
-import { Modal } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+
 import { useForm } from "react-hook-form";
 
 const UpdateToyDetails = (props) => {
@@ -15,17 +14,12 @@ const UpdateToyDetails = (props) => {
   };
 
   return (
-    <div className="">
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
+    <div className="container p-5">
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="my-4">
           <h2 className="text-color text-center fw-bold">Update Toy Details</h2>
 
-          <div className="form-group mb-3 w-50 mx-auto">
+          <div className="form-group mb-3 w-50 w-sm-100 mx-auto">
             <label htmlFor="name">Toy Name</label>
             <input
               type="text"
@@ -42,7 +36,6 @@ const UpdateToyDetails = (props) => {
               type="number"
               className="form-control"
               id="price"
-              
               {...register("price", { required: true })}
             />
             {errors.price && <span>This field is required</span>}
@@ -70,12 +63,10 @@ const UpdateToyDetails = (props) => {
           {errors.description && <span>This field is required</span>}
         </div>
 
-        <div className="text-center my-3">
-          <Button className="w-25 btn-info fw-bold" onClick={props.onHide}>
-            Close
-          </Button>
+        <div className="text-center mt-3 ">
+          <button className="btn btn-info">UPDATE</button>
         </div>
-      </Modal>
+      </form>
     </div>
   );
 };

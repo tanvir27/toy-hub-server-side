@@ -1,62 +1,63 @@
-import React from 'react';
-import useTitle from '../../hooks/useTitle';
+import React, { useState } from "react";
+import useTitle from "../../hooks/useTitle";
+import { useLoaderData } from "react-router-dom";
+import SingleToy from "../SingleToy/SingleToy";
 
 const AllToys = () => {
-    useTitle('All Toys');
-     const toysData = [
-       {
-         seller: "John Doe",
-         name: "Toy Car",
-         subCategory: "Vehicles",
-         price: "$19.99",
-         quantity: 10,
-       },
-       {
-         seller: "Jane Smith",
-         name: "Building Blocks",
-         subCategory: "Educational",
-         price: "$24.99",
-         quantity: 5,
-       },
-       // Add more toy data here
-    ];
-    
-    return (
-      <div className="container">
-        <div className="p-5">
-          <div className="table-responsive">
-            <table className="table text-center">
-              <thead>
-                <tr>
-                  <th>Serial No</th>
-                  <th>Seller</th>
-                  <th>Toy Name</th>
-                  <th>Sub-category</th>
-                  <th>Price</th>
-                  <th>Available Quantity</th>
-                  <th>Details</th>
+  let i = 1;
+  useTitle("All Toys");
+
+  const [modalShow, setModalShow] = React.useState(false);
+  const toysData = useLoaderData();
+
+  return (
+    <div className="container">
+      <div className="p-5">
+        <div className="table-responsive">
+          <table className="table text-center">
+            <thead>
+              <tr>
+                <th>Serial No</th>
+                <th>Seller</th>
+                <th>Toy Name</th>
+                <th>Sub-category</th>
+                <th>Price</th>
+                <th>Available Quantity</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {toysData.map((data) => (
+                <tr key={data.id}>
+                  <td>{i++}</td>
+                  <td>{data.sellerName}</td>
+                  <td>{data.toyName}</td>
+                  <td>{data.subCategory}</td>
+                  <td>{data.price}</td>
+                  <td>{data.availableQuantity}</td>
+                  <td>
+                    {/* {console.log("on map :", data)} */}
+                    <button
+                      type="button"
+                      className="btn w-75 btn-info"
+                      onClick={() => setModalShow(true)}
+                    >
+                      View Details
+                    </button>
+                    <SingleToy
+                      show={modalShow}
+                      onHide={() => setModalShow(false)}
+                      data={data}
+                    />
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {toysData.map((toy, index) => (
-                  <tr key={toy.id}>
-                    <td>{index + 1}</td>
-                    <td>{toy.seller}</td>
-                    <td>{toy.name}</td>
-                    <td>{toy.subCategory}</td>
-                    <td>{toy.price}</td>
-                    <td>{toy.quantity}</td>
-                    <td>
-                      <button className="btn btn-info text-white ">View Details</button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default AllToys;

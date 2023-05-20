@@ -1,35 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useTitle from "../../hooks/useTitle";
 
-import SingleToy from "../SingleToy/SingleToy";
-import UpdateToyDetails from "../UpdateToyDetails/UpdateToyDetails";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const MyToys = () => {
-  const [modalShowDetails, setModalShowDetails] = useState(false);
-  const [modalShowEdit, setModalShowEdit] = useState(false);
+  const { user } = useContext(AuthContext);
+    useTitle("My Toys");
+    
+  // fetching data from db
+    const [toysData, setToysData] = useState([]);
+    // const url = `http://localhost:5000/myToys?email=${user.email}`;
 
-  useTitle("My Toys");
-  const toysData = [
-    {
-      seller: "John Doe",
-      name: "Toy Car",
-      subCategory: "Vehicles",
-      price: "$19.99",
-      quantity: 10,
-      rating: 5,
-      email: "john.doe@gmail.com",
-    },
-    {
-      seller: "Jane Smith",
-      name: "Building Blocks",
-      subCategory: "Educational",
-      price: "$24.99",
-      quantity: 5,
-      rating: 5,
-      email: "john.doe@gmail.com",
-    },
-    // Add more toy data here
-  ];
+    const url = `http://localhost:5000/myToys?email=${user.email}`;
+    useEffect(() => {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => setToysData(data));
+    }, [user]);
+    
+    
+
+
+  console.log("user info:", user.email);
   return (
     <div>
       <div className="container">
@@ -40,7 +33,7 @@ const MyToys = () => {
                 <tr>
                   <th>Serial No</th>
                   <th>Toy Name</th>
-                  <th>Picture</th>
+              
                   <th>Seller</th>
                   <th>Email</th>
                   <th>Sub-category</th>
@@ -49,50 +42,33 @@ const MyToys = () => {
                   <th> Quantity</th>
                   <th>Action 1</th>
                   <th>Action 2</th>
-                  <th> Details</th>
                 </tr>
               </thead>
               <tbody>
                 {toysData.map((toy, index) => (
                   <tr key={toy.id}>
                     <td>{index + 1}</td>
-                    <td>{toy.name}</td>
-                    <td>Picture</td>
-                    <td>{toy.seller}</td>
-                    <td>{toy.email}</td>
+                    <td>{toy.toyName}</td>
+                    
+                    <td>{toy.sellerName}</td>
+                    <td>{toy.sellerEmail}</td>
 
                     <td>{toy.subCategory}</td>
                     <td>{toy.price}</td>
                     <td>{toy.rating}</td>
-                    <td>{toy.quantity}</td>
+                    <td>{toy.availableQuantity}</td>
                     <td>
-                      <button
-                        className="btn btn-info text-white"
-                        onClick={() => setModalShowEdit(true)}
-                      >
-                        Edit
-                      </button>
-                      <UpdateToyDetails
-                        show={modalShowEdit}
-                        onHide={() => setModalShowEdit(false)}
-                      />
+                      <Link to="/editToys">
+                        {" "}
+                        <button className="btn btn-info text-white">
+                          Edit
+                        </button>
+                      </Link>
                     </td>
                     <td>
                       <button className="btn btn-info text-white ">
                         Delete
                       </button>
-                    </td>
-                    <td>
-                      <button
-                        className="btn btn-info text-white"
-                        onClick={() => setModalShowDetails(true)}
-                      >
-                        View Details
-                      </button>
-                      <SingleToy
-                        show={modalShowDetails}
-                        onHide={() => setModalShowDetails(false)}
-                      />
                     </td>
                   </tr>
                 ))}

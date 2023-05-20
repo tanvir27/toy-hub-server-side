@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import useTitle from "../../hooks/useTitle";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const AddToys = () => {
+  const { user } = useContext(AuthContext);
   useTitle("Add Toys");
   const {
     register,
@@ -10,8 +12,18 @@ const AddToys = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (toy) => {
+    fetch("http://localhost:5000/addToys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   return (
@@ -33,14 +45,14 @@ const AddToys = () => {
             {errors.pictureUrl && <span>This field is required</span>}
           </div>
           <div className="form-group col-md-6 col-sm-12">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="toyName">Toy Name</label>
             <input
               type="text"
               className="form-control"
-              id="name"
-              {...register("name", { required: true })}
+              id="toyName"
+              {...register("toyName", { required: true })}
             />
-            {errors.name && <span>This field is required</span>}
+            {errors.toyName && <span>This field is required</span>}
           </div>
         </div>
         {/* name  */}
@@ -48,6 +60,7 @@ const AddToys = () => {
           <div className="form-group col-md-6 col-sm-12">
             <label htmlFor="sellerEmail">Seller Email</label>
             <input
+              defaultValue={user.email}
               type="email"
               className="form-control"
               id="sellerEmail"
@@ -59,6 +72,7 @@ const AddToys = () => {
             <label htmlFor="sellerName">Seller Name</label>
             <input
               type="text"
+              defaultValue={user.displayName}
               className="form-control"
               id="sellerName"
               {...register("sellerName", { required: true })}
@@ -77,9 +91,9 @@ const AddToys = () => {
               {...register("subCategory", { required: true })}
             >
               <option value="">Select a sub-category</option>
-              <option value="Truck Toy Cars">Truck Cars</option>
-              <option value="Police Toy Car">Mini Police Car</option>
-              <option value="Sports Toy Car">Sports Car</option>
+              <option value="Sports Car">Sports Car</option>
+              <option value="Truck Cars">Truck Cars</option>
+              <option value="Mini Police Car">Mini Police Car</option>
             </select>
             {errors.subCategory && <span>This field is required</span>}
           </div>
@@ -101,7 +115,7 @@ const AddToys = () => {
           <div className="form-group col-md-6 col-sm-12">
             <label htmlFor="rating">Rating</label>
             <input
-              type="number"
+              type="text"
               className="form-control"
               id="rating"
               {...register("rating", { required: true })}
@@ -110,14 +124,14 @@ const AddToys = () => {
           </div>
 
           <div className="form-group col-md-6 col-sm-12">
-            <label htmlFor="quantity">Available Quantity</label>
+            <label htmlFor="availableQuantity">Available Quantity</label>
             <input
               type="number"
               className="form-control"
-              id="quantity"
-              {...register("quantity", { required: true })}
+              id="availableQuantity"
+              {...register("availableQuantity", { required: true })}
             />
-            {errors.quantity && <span>This field is required</span>}
+            {errors.availableQuantity && <span>This field is required</span>}
           </div>
         </div>
         <div className="form-group  px-sm-0 py-sm-0 px-lg-5 py-lg-2 mx-auto">
