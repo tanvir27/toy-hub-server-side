@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
@@ -9,12 +9,39 @@ import { HiLocationMarker, HiOutlineMail, HiPhone } from "react-icons/hi";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useTitle from "../../hooks/useTitle";
-import SingleToy from "../SingleToy/SingleToy";
+import ToyCard from "./ToyCard";
+import { useState } from "react";
 
 const Home = () => {
   useTitle("Home");
-  const [modalShow, setModalShow] = React.useState(false);
-  // const loader = useLoaderData();
+  const [tabIndex, setTabIndex] = useState(0);
+  const [categorizedToys, setCategorizedToys] = useState([]);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setData(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (tabIndex == 0) {
+      const newData = data.filter((toy) => toy.subCategory === "Sports Car");
+      setCategorizedToys(newData);
+    } else if (tabIndex == 1) {
+      const newData = data.filter((toy) => toy.subCategory === "Truck Car");
+      setCategorizedToys(newData);
+    } else if (tabIndex == 2) {
+      const newData = data.filter(
+        (toy) => toy.subCategory === "Mini Police Car"
+      );
+      setCategorizedToys(newData);
+    }
+  }, [tabIndex, data]);
+
   return (
     <div className="bg-color">
       <div className="container home-section pt-lg-5">
@@ -165,90 +192,38 @@ const Home = () => {
 
         <div className="text-center my-2 my-lg-5">
           <h1 className="fw-bold text-color mb-4">Shop By Category</h1>
-          <Tabs>
+          <Tabs
+            selectedIndex={tabIndex}
+            onSelect={(index) => setTabIndex(index)}
+          >
             <div className="fw-bold text-color fst-italic">
               <TabList>
+                <Tab>Sports Car</Tab>
                 <Tab>Truck Car</Tab>
                 <Tab>Mini Police Car</Tab>
-                <Tab>Sports Car</Tab>
               </TabList>
             </div>
 
             <TabPanel>
-              <div className="container row row-cols-1 row-cols-md-2 mt-2 mx-auto">
-                <div className="card mb-3">
-                  <div className="row g-0 py-2">
-                    <div className="col-md-6">
-                      <img
-                        src="https://images.unsplash.com/photo-1575574419906-41458fc83949?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fHRveSUyMHRydWNrJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
-                        className="img-fluid  rounded "
-                        style={{ height: "100%" }}
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-md-6">
-                      <div className="card-body">
-                        <h5 className="card-title fw-bold text-color">
-                          Truck Car X
-                        </h5>
-                        <div className="mt-3">
-                          <p className="">Price: $ 120</p>
-                          <p className="">Ratings: ***** </p>
-                        </div>
-                        <div className="text-center mt-2">
-                          <button
-                            type="button"
-                            className="btn w-75 btn-info"
-                            onClick={() => setModalShow(true)}
-                          >
-                            View Details
-                          </button>
-                          <SingleToy
-                            show={modalShow}
-                            onHide={() => setModalShow(false)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="card mb-3">
-                  <div className="row g-0 py-2">
-                    <div className="col-md-6">
-                      <img
-                        src="https://images.unsplash.com/photo-1575574419906-41458fc83949?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fHRveSUyMHRydWNrJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
-                        className="img-fluid  rounded "
-                        style={{ height: "100%" }}
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-md-6">
-                      <div className="card-body">
-                        <h5 className="card-title fw-bold text-color">
-                          Truck Car X
-                        </h5>
-                        <div className="mt-3">
-                          <p className="">Price: $ 120</p>
-                          <p className="">Ratings: ***** </p>
-                        </div>
-                        <div className="text-center mt-2">
-                          <Link>
-                            <button type="button" className="btn w-75 btn-info">
-                              View Details
-                            </button>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="container row row-cols-1 row-cols-md-3 mt-2 mx-auto">
+                {categorizedToys.map((data) => (
+                  <ToyCard data={data}></ToyCard>
+                ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <h2>Any content 2</h2>
+              <div className="container row row-cols-1 row-cols-md-3 mt-2 mx-auto">
+                {categorizedToys.map((data) => (
+                  <ToyCard data={data}></ToyCard>
+                ))}
+              </div>
             </TabPanel>
             <TabPanel>
-              <h2>Any content 3</h2>
+              <div className="container row row-cols-1 row-cols-md-3 mt-2 mx-auto">
+                {categorizedToys.map((data) => (
+                  <ToyCard data={data}></ToyCard>
+                ))}
+              </div>
             </TabPanel>
           </Tabs>
         </div>

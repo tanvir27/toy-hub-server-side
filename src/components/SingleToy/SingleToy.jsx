@@ -2,6 +2,7 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 const SingleToy = (props) => {
+   const data = props.data;
   return (
     <div>
       <Modal
@@ -21,43 +22,39 @@ const SingleToy = (props) => {
         </Modal.Header>
         <Modal.Body>
           <div className="row ">
-            <div className="col-md-6 ">
+            <div className="col-md-6 p-3">
               <img
-                src="https://images.unsplash.com/photo-1575574419906-41458fc83949?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fHRveSUyMHRydWNrJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
-                className="img-fluid rounded"
+                src={data.imageURL}
+                className=" img-fluid rounded-3"
                 style={{ height: "100%" }}
                 alt=""
               />
             </div>
             <div className="col-md-6 ">
               <div className="card-body mt-3 text-center">
-                <h5 className="card-title fw-bold text-color">Truck Car X</h5>
+                <h5 className="card-title fw-bold text-color">{data.name}</h5>
                 <div className=" mt-3">
                   <p className="card-title  ">
-                    <i className="fw-bold">Seller Name :</i> Tanvir Hasan
+                    <i className="fw-bold">Seller Name :</i> {data.sellerName}
                   </p>
                   <p className="card-title  ">
-                    <i className="fw-bold"> Seller Email :</i>{" "}
-                    tanvir279@gmail.com
+                    <i className="fw-bold"> Seller Email : </i>
+                    {data.sellerEmail}
                   </p>
                 </div>
                 <p className="mt-2">
-                  <i className="fw-bold">Quantity:</i> 500
+                  <i className="fw-bold">Quantity:</i> {data.availableQuantity}
                 </p>
 
                 <p className="">
-                  <i className="fw-bold">Price:</i> $ 120
+                  <i className="fw-bold">Price:</i> $ {data.price}
                 </p>
                 <p className="">
-                  <i className="fw-bold">Ratings:</i> *****{" "}
+                  <i className="fw-bold">Ratings:</i> {data.rating}
                 </p>
 
                 <p>
-                  <i className="fw-bold">Description:</i> Lorem ipsum dolor, sit
-                  amet consectetur adipisicing elit. Eligendi, sequi. In illo
-                  excepturi blanditiis reiciendis. Lorem ipsum dolor, sit amet
-                  consectetur adipisicing elit. Eligendi, sequi. In illo
-                  excepturi blanditiis reiciendis.
+                  <i className="fw-bold">Description:</i> {data.description}
                 </p>
               </div>
             </div>

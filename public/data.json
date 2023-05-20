@@ -1,0 +1,103 @@
+[
+  {
+    "subCategory": "Sports Car",
+    "toyName": "Porsche Boxster",
+    "imageURL": "https://images.unsplash.com/photo-1672467575273-2918d93d00ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwc3BvcnRzJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    "price": 19.99,
+    "rating": 4.5,
+    "sellerName": "Toy Emporium",
+    "sellerEmail": "toys@toyemporium.com",
+    "availableQuantity": 10,
+    "description": "Experience the thrill of speed with this sleek sports car toy. It features a detailed exterior..."
+  },
+  {
+    "subCategory": "Sports Car",
+    "toyName": "Lamborghini Aventador",
+    "imageURL": "https://images.unsplash.com/photo-1672467575273-2918d93d00ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwc3BvcnRzJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    "price": 24.99,
+    "rating": 4.8,
+    "sellerName": "Toy World",
+    "sellerEmail": "sales@toyworld.com",
+    "availableQuantity": 8,
+    "description": "Own the streets with this high-performance Lamborghini Aventador toy. Its sleek design and..."
+  },
+  {
+    "subCategory": "Sports Car",
+    "toyName": "Ferrari 488 GTB",
+    "imageURL": "https://images.unsplash.com/photo-1672467575273-2918d93d00ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwc3BvcnRzJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    "price": 17.99,
+    "rating": 4.3,
+    "sellerName": "Kids' Toys",
+    "sellerEmail": "info@kidstoys.com",
+    "availableQuantity": 12,
+    "description": "Get ready for a thrilling race with the Ferrari 488 GTB toy car. Its vibrant red color and..."
+  },
+
+  {
+    "subCategory": "Truck Car",
+    "toyName": "Monster Truck",
+    "imageURL": "https://images.unsplash.com/photo-1665779933484-ca120461551e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dG95JTIwc3BvcnRzJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    "price": 14.99,
+    "rating": 4.2,
+    "sellerName": "Super Toys",
+    "sellerEmail": "sales@supertoys.com",
+    "availableQuantity": 6,
+    "description": "Conquer any terrain with this powerful monster truck toy. Its large wheels and sturdy build..."
+  },
+  {
+    "subCategory": "Truck Car",
+    "toyName": "Construction Hauler",
+    "imageURL": "https://images.unsplash.com/photo-1665779933484-ca120461551e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dG95JTIwc3BvcnRzJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    "price": 12.99,
+    "rating": 4.5,
+    "sellerName": "Toyland",
+    "sellerEmail": "support@toyland.com",
+    "availableQuantity": 15,
+    "description": "Transport heavy loads with ease using this construction hauler toy. It features a detachable trailer..."
+  },
+  {
+    "subCategory": "Truck Car",
+    "toyName": "Fire Rescue Truck",
+    "imageURL": "https://images.unsplash.com/photo-1665779933484-ca120461551e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dG95JTIwc3BvcnRzJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    "price": 16.99,
+    "rating": 4.8,
+    "sellerName": "Fun Toys",
+    "sellerEmail": "info@funtoys.com",
+    "availableQuantity": 9,
+    "description": "Be a hero with this fire rescue truck toy. It comes with realistic lights and sounds, extending ladder..."
+  },
+
+  {
+    "subCategory": "Mini Police Car",
+    "toyName": "Police Pursuit",
+    "imageURL": "https://images.unsplash.com/photo-1459603677915-a62079ffd002?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dG95JTIwbWluaSUyMHBvbGljZSUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "price": 9.99,
+    "rating": 4.0,
+    "sellerName": "Toy Zone",
+    "sellerEmail": "info@toyszone.com",
+    "availableQuantity": 18,
+    "description": "Join the police force and catch the bad guys with this mini police car toy. It's perfect for..."
+  },
+  {
+    "subCategory": "Mini Police Car",
+    "toyName": "Patrol Cruiser",
+    "imageURL": "https://images.unsplash.com/photo-1459603677915-a62079ffd002?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dG95JTIwbWluaSUyMHBvbGljZSUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "price": 11.99,
+    "rating": 4.5,
+    "sellerName": "City Toys",
+    "sellerEmail": "sales@citytoys.com",
+    "availableQuantity": 14,
+    "description": "Keep the city safe with this mini police car toy. It's equipped with lights and sounds..."
+  },
+  {
+    "subCategory": "Mini Police Car",
+    "toyName": "Undercover Agent",
+    "imageURL": "https://images.unsplash.com/photo-1459603677915-a62079ffd002?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dG95JTIwbWluaSUyMHBvbGljZSUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "price": 14.99,
+    "rating": 4.2,
+    "sellerName": "Toy Empire",
+    "sellerEmail": "sales@toyempire.com",
+    "availableQuantity": 10,
+    "description": "Go on covert missions with this mini police car toy. Its sleek design and secret features make it..."
+  }
+]
