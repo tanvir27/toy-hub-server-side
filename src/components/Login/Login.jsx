@@ -51,7 +51,11 @@ const Login = () => {
     <div>
       <section className="py-5 bg-color">
         <Container>
-          <div className="">
+          <div
+            className=""
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+          >
             <div className="d-flex justify-content-center ">
               <div className="col-md-6 ">
                 <h2 className="text-center mb-4 fw-bold">

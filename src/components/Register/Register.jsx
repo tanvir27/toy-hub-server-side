@@ -48,7 +48,11 @@ useTitle("Register");
   return (
     <section className="bg-color py-5">
       <Container>
-        <div className="d-flex justify-content-center">
+        <div
+          className="d-flex justify-content-center "
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+        >
           <div className="col-md-6">
             <h2 className="text-center mb-4">Register for an Account</h2>
             <Form onSubmit={handleRegister}>
