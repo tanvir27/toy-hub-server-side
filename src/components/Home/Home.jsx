@@ -9,9 +9,11 @@ import { HiLocationMarker, HiOutlineMail, HiPhone } from "react-icons/hi";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useTitle from "../../hooks/useTitle";
+import SingleToy from "../SingleToy/SingleToy";
 
 const Home = () => {
   useTitle("Home");
+  const [modalShow, setModalShow] = React.useState(false);
   // const loader = useLoaderData();
   return (
     <div className="bg-color">
@@ -194,11 +196,17 @@ const Home = () => {
                           <p className="">Ratings: ***** </p>
                         </div>
                         <div className="text-center mt-2">
-                          <Link>
-                            <button type="button" className="btn w-75 btn-info">
-                              View Details
-                            </button>
-                          </Link>
+                          <button
+                            type="button"
+                            className="btn w-75 btn-info"
+                            onClick={() => setModalShow(true)}
+                          >
+                            View Details
+                          </button>
+                          <SingleToy
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+                          />
                         </div>
                       </div>
                     </div>

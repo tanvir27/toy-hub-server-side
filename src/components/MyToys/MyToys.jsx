@@ -1,7 +1,11 @@
 import React from "react";
 import useTitle from "../../hooks/useTitle";
 
+import SingleToy from "../SingleToy/SingleToy";
+import UpdateToyDetails from "../UpdateToyDetails/UpdateToyDetails";
+
 const MyToys = () => {
+const [modalShow, setModalShow] = React.useState(false);
   useTitle("My Toys");
   const toysData = [
     {
@@ -60,7 +64,16 @@ const MyToys = () => {
                     <td>{toy.rating}</td>
                     <td>{toy.quantity}</td>
                     <td>
-                      <button className="btn btn-info text-white ">Edit</button>
+                      <button
+                        className="btn btn-info text-white "
+                        onClick={() => setModalShow(true)}
+                      >
+                        Edit
+                      </button>
+                      <UpdateToyDetails
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                      />
                     </td>
                     <td>
                       <button className="btn btn-info text-white ">
@@ -68,9 +81,16 @@ const MyToys = () => {
                       </button>
                     </td>
                     <td>
-                      <button className="btn btn-info text-white ">
+                      <button
+                        className="btn btn-info text-white"
+                        onClick={() => setModalShow(true)}
+                      >
                         View Details
                       </button>
+                      <SingleToy
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                      />
                     </td>
                   </tr>
                 ))}
