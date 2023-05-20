@@ -11,7 +11,7 @@ import "react-tabs/style/react-tabs.css";
 import useTitle from "../../hooks/useTitle";
 
 const Home = () => {
-  useTitle('Home')
+  useTitle("Home");
   // const loader = useLoaderData();
   return (
     <div className="bg-color">
@@ -19,7 +19,11 @@ const Home = () => {
         {/* banner section start */}
         <div className="container mb-3 mb-lg-5 ">
           <div className="row ">
-            <div className="col-md-6">
+            <div
+              className="col-md-6 "
+              data-aos="fade-right"
+              data-aos-duration="2000"
+            >
               <div className="px-0 px-lg-5 text-color">
                 <h1 className="text-center pt-2">
                   Discover Endless Adventures with Toy Hub
@@ -41,7 +45,11 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 px-0">
+            <div
+              className="col-md-6 px-0 "
+              data-aos="fade-left"
+              data-aos-duration="2000"
+            >
               <div className="rounded-5">
                 <Carousel>
                   <Carousel.Item>
@@ -76,10 +84,15 @@ const Home = () => {
         {/* gallery  section start*/}
 
         <div className=" my-2 my-lg-5">
-          <h1 className="text-center text-color fw-bold">
-            <i>Gallery</i>
+          <h1 className="text-center text-color my-5 fw-bold">
+            <i>ToY Gallery</i>
           </h1>
-          <div className="row">
+          <div
+            className="row "
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+          >
             <div className="col-lg-4 col-md-6 col-sm-12 shadow py-3 body-color rounded">
               <div className="card shadow">
                 <img
@@ -149,7 +162,7 @@ const Home = () => {
         {/* catagories section start */}
 
         <div className="text-center my-2 my-lg-5">
-          <h1 className="fw-bold text-color mb-3">Shop By Category</h1>
+          <h1 className="fw-bold text-color mb-4">Shop By Category</h1>
           <Tabs>
             <div className="fw-bold text-color fst-italic">
               <TabList>
@@ -242,7 +255,11 @@ const Home = () => {
               <span className="text-warning"> Clients says</span>
             </i>
           </h1>
-          <div className="container row row-cols-1 row-cols-md-3  mx-auto">
+          <div
+            className="container row row-cols-1 row-cols-md-3  mx-auto "
+            data-aos="zoom-in-up"
+            data-aos-duration="2000"
+          >
             <div className="card text-center">
               <div className="mt-0 mt-lg-5">
                 {" "}
