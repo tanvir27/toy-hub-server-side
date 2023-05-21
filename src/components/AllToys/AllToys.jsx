@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import useTitle from "../../hooks/useTitle";
 import { useLoaderData } from "react-router-dom";
-import SingleToy from "../SingleToy/SingleToy";
+
 
 const AllToys = () => {
   const toysData = useLoaderData();
   useTitle("All Toys");
-  let i = 1;
-  const [modalShow, setModalShow] = React.useState(false);
+    let i = 1;
+    
   const [searchedText, setSearchedText] = useState(" ");
 
   const [toys, setToys] = useState(toysData);
@@ -82,11 +82,11 @@ const AllToys = () => {
                     >
                       View Details
                     </button>
-                    <SingleToy
+                    {/* <AllToysDetails
                       show={modalShow}
                       onHide={() => setModalShow(false)}
                       data={data}
-                    />
+                    /> */}
                   </td>
                 </tr>
               ))}

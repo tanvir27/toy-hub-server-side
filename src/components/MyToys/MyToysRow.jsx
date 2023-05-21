@@ -19,7 +19,7 @@ const MyToysRow = ({ toy, index, handleDelete }) => {
       <td>{toy.rating}</td>
       <td>{toy.availableQuantity}</td>
       <td>
-        <Link to="/editToys">
+        <Link to={`/editToys/${toy._id}`}>
           {" "}
           <button className="btn btn-info text-white">Edit</button>
         </Link>
