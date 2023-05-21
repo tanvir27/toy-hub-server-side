@@ -4,15 +4,48 @@ import { useLoaderData } from "react-router-dom";
 import SingleToy from "../SingleToy/SingleToy";
 
 const AllToys = () => {
-  let i = 1;
+  const toysData = useLoaderData();
+
   useTitle("All Toys");
 
   const [modalShow, setModalShow] = React.useState(false);
-  const toysData = useLoaderData();
-    console.log(toysData);
+  const [searchedText, setSearchedText] = useState(" ");
+
+  const [toys, setToys] = useState(toysData);
+
+  // search toy
+  const search = (event) => {
+    console.log(event.target.value);
+    const matchedName = toysData.filter((name) => {
+      console.log("Name: ", name);
+      return name.toyName
+        .toLowerCase()
+        .includes(event.target.value.toLowerCase());
+    });
+    console.log("matched data: ", matchedName);
+    setToys(matchedName);
+    setSearchedText(event.target.value);
+  };
+
   return (
     <div className="container">
       <div className="p-5">
+        <h1 className="text-center text-color fw-bold mb-5">
+          All <span className="text-danger">TOY</span> Collection
+        </h1>
+        <div className="p-2 text-center ">
+          <form>
+            <div className="form-control mx-auto">
+              <input
+                type="text"
+                placeholder="Search"
+                className=""
+                value={searchedText}
+                onChange={search}
+              />
+            </div>
+          </form>
+        </div>
         <div className="table-responsive">
           <table className="table text-center">
             <thead>
@@ -27,7 +60,7 @@ const AllToys = () => {
               </tr>
             </thead>
             <tbody>
-              {toysData.map((data) => (
+              {toys.map((data) => (
                 <tr key={data.id}>
                   <td>{i++}</td>
                   <td>{data.sellerName}</td>

@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import useTitle from "../../hooks/useTitle";
-
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-
 import Swal from "sweetalert2";
 import MyToysRow from "./MyToysRow";
 
@@ -11,7 +9,7 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
 
   useTitle("My Toys");
-
+ 
   // fetching data from db
   const [toysData, setToysData] = useState([]);
   console.log(toysData);
@@ -25,7 +23,6 @@ const MyToys = () => {
 
   // console.log("user info:", user.email);
   // delete operation
-
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -44,9 +41,11 @@ const MyToys = () => {
           .then((data) => {
             console.log(data);
             if (data.deletedCount > 0) {
-                Swal.fire("Deleted!", "Your file has been deleted.", "success");
-                const remaining = toysData.filter(toyData => toyData._id !== id);
-                setToysData(remaining);
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              const remaining = toysData.filter(
+                (toyData) => toyData._id !== id
+              );
+              setToysData(remaining);
             }
           });
       }
@@ -57,6 +56,10 @@ const MyToys = () => {
     <div>
       <div className="container">
         <div className="py-5">
+          <h1 className="text-center text-color fw-bold mb-5">
+            Your <span className="text-danger">TOY</span> Collection
+          </h1>
+          <hr className="w-50 fw-bold mx-auto"></hr>
           <div className="table-responsive">
             <table className="table text-center">
               <thead>
