@@ -92,7 +92,7 @@ const AllToys = () => {
               </tr>
             </thead>
             <tbody>
-              {toys.map((data) => (
+              {toys.slice(0,20).map((data) => (
                 <tr key={data.id}>
                   <td>{i++}</td>
                   <td>{data.sellerName}</td>
