@@ -94,7 +94,7 @@ const AddToys = () => {
             >
               <option value="">Select a sub-category</option>
               <option value="Sports Car">Sports Car</option>
-              <option value="Truck Cars">Truck Cars</option>
+              <option value="Truck Car">Truck Car</option>
               <option value="Mini Police Car">Mini Police Car</option>
             </select>
             {errors.subCategory && <span>This field is required</span>}

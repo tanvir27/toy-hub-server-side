@@ -1,9 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import SingleToy from "../SingleToy/SingleToy";
 const MyToysRow = ({ toy, index, handleDelete }) => {
   console.log(toy._id);
 
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <tr key={toy._id}>
       <td>{index + 1}</td>
@@ -35,15 +37,15 @@ const MyToysRow = ({ toy, index, handleDelete }) => {
         <button
           type="button"
           className="btn w-75 btn-info"
-          // onClick={() => setModalShow(true)}
+          onClick={() => setModalShow(true)}
         >
           View Details
         </button>
-        {/* <SingleToy
-                        show={modalShow}
-                        onHide={() => setModalShow(false)}
-                        // data={data}
-                      /> */}
+        <SingleToy
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          data={toy}
+        />
       </td>
     </tr>
   );
