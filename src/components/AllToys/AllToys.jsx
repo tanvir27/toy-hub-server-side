@@ -13,47 +13,20 @@ const AllToys = () => {
   const [toys, setToys] = useState(toysData);
 
   // search toy
-  //   const search = (event) => {
-  //     console.log(event.target.value);
-  //     const matchedName = toysData.filter((name) => {
-  //       console.log("Name: ", name);
-  //       return name.toyName
-  //         .toLowerCase()
-  //         .includes(event.target.value.toLowerCase());
-  //     });
-  //     console.log("matched data: ", matchedName);
-  //     setToys(matchedName);
-  //     setSearchedText(event.target.value);
-  //   };
-
-  const search = (event) => {
-    const searchText = event.target.value;
-    setSearchedText(searchText);
-  };
-
-  useEffect(() => {
-    let timeoutId;
-
-    const performSearch = () => {
-      const matchedToys = toysData.filter((toy) =>
-        toy.toyName.toLowerCase().includes(searchedText.toLowerCase())
-      );
-      setToys(matchedToys);
+    const search = (event) => {
+      console.log(event.target.value);
+      const matchedName = toysData.filter((name) => {
+        console.log("Name: ", name);
+        return name.toyName
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase());
+      });
+      console.log("matched data: ", matchedName);
+      setToys(matchedName);
+      setSearchedText(event.target.value);
     };
 
-    if (searchedText) {
-      // Delay the search operation by 300 milliseconds
-      timeoutId = setTimeout(performSearch, 100);
-    } else {
-      // If the input is empty, clear the search results
-      setToys(toysData);
-    }
-
-    return () => {
-      // Clear any pending timeouts when the input value changes rapidly
-      clearTimeout(timeoutId);
-    };
-  }, [searchedText, toysData]);
+ 
 
   return (
     <div className="container">

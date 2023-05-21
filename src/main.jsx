@@ -62,7 +62,8 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/toys"),
+        loader: () =>
+          fetch("https://toy-hub-server-side-tanvir27.vercel.app/toys"),
       },
 
       {

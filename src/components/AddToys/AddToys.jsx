@@ -5,7 +5,6 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
 
 const AddToys = () => {
-   
   const { user } = useContext(AuthContext);
   useTitle("Add Toys");
   const {
@@ -15,7 +14,7 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (toy) => {
-    fetch("http://localhost:5000/addToys", {
+    fetch("https://toy-hub-server-side-tanvir27.vercel.app/addToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",

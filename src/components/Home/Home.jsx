@@ -19,10 +19,10 @@ const Home = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("https://toy-hub-server-side-tanvir27.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
-        console.log("home data: ",data);
+        console.log("home data: ", data);
         setData(data);
       });
   }, []);
