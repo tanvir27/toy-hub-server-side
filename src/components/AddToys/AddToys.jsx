@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import useTitle from "../../hooks/useTitle";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Toaster, toast } from "react-hot-toast";
 
 const AddToys = () => {
+   
   const { user } = useContext(AuthContext);
   useTitle("Add Toys");
   const {
@@ -35,14 +37,14 @@ const AddToys = () => {
         {/* photo and email  */}
         <div className="row ">
           <div className="form-group col-md-6 col-sm-12">
-            <label htmlFor="pictureUrl">Picture URL of the toy</label>
+            <label htmlFor="imageURL">Picture URL of the toy</label>
             <input
               type="text"
               className="form-control"
-              id="pictureUrl"
-              {...register("pictureUrl", { required: true })}
+              id="imageURL"
+              {...register("imageURL", { required: true })}
             />
-            {errors.pictureUrl && <span>This field is required</span>}
+            {errors.imageURL && <span>This field is required</span>}
           </div>
           <div className="form-group col-md-6 col-sm-12">
             <label htmlFor="toyName">Toy Name</label>
@@ -146,11 +148,18 @@ const AddToys = () => {
         </div>
 
         <div className=" text-center mt-3">
-          <button type="submit" className="btn w-50 btn-info">
+          <button
+            type="submit"
+            className="btn w-50 btn-info"
+            onClick={() => {
+              toast.success("Toy added successfully!");
+            }}
+          >
             ADD TOY
           </button>
         </div>
       </form>
+      <Toaster position="top-center" reverseOrder={false} />;
     </div>
   );
 };

@@ -9,7 +9,7 @@ const AllToys = () => {
 
   const [modalShow, setModalShow] = React.useState(false);
   const toysData = useLoaderData();
-
+    console.log(toysData);
   return (
     <div className="container">
       <div className="p-5">

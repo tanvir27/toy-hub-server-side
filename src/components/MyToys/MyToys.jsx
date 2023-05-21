@@ -4,25 +4,55 @@ import useTitle from "../../hooks/useTitle";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
+import Swal from "sweetalert2";
+import MyToysRow from "./MyToysRow";
+
 const MyToys = () => {
   const { user } = useContext(AuthContext);
-    useTitle("My Toys");
-    
+
+  useTitle("My Toys");
+
   // fetching data from db
-    const [toysData, setToysData] = useState([]);
-    // const url = `http://localhost:5000/myToys?email=${user.email}`;
+  const [toysData, setToysData] = useState([]);
+  console.log(toysData);
 
-    const url = `http://localhost:5000/myToys?email=${user.email}`;
-    useEffect(() => {
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => setToysData(data));
-    }, [user]);
-    
-    
+  const url = `http://localhost:5000/myToys?email=${user.email}`;
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setToysData(data));
+  }, [user]);
 
+  // console.log("user info:", user.email);
+  // delete operation
 
-  console.log("user info:", user.email);
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/myToys/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+                Swal.fire("Deleted!", "Your file has been deleted.", "success");
+                const remaining = toysData.filter(toyData => toyData._id !== id);
+                setToysData(remaining);
+            }
+          });
+      }
+    });
+  };
+
   return (
     <div>
       <div className="container">
@@ -33,7 +63,7 @@ const MyToys = () => {
                 <tr>
                   <th>Serial No</th>
                   <th>Toy Name</th>
-              
+
                   <th>Seller</th>
                   <th>Email</th>
                   <th>Sub-category</th>
@@ -42,35 +72,17 @@ const MyToys = () => {
                   <th> Quantity</th>
                   <th>Action 1</th>
                   <th>Action 2</th>
+                  <th>Details</th>
                 </tr>
               </thead>
               <tbody>
                 {toysData.map((toy, index) => (
-                  <tr key={toy.id}>
-                    <td>{index + 1}</td>
-                    <td>{toy.toyName}</td>
-                    
-                    <td>{toy.sellerName}</td>
-                    <td>{toy.sellerEmail}</td>
-
-                    <td>{toy.subCategory}</td>
-                    <td>{toy.price}</td>
-                    <td>{toy.rating}</td>
-                    <td>{toy.availableQuantity}</td>
-                    <td>
-                      <Link to="/editToys">
-                        {" "}
-                        <button className="btn btn-info text-white">
-                          Edit
-                        </button>
-                      </Link>
-                    </td>
-                    <td>
-                      <button className="btn btn-info text-white ">
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
+                  <MyToysRow
+                    key={toy._id}
+                    toy={toy}
+                    index={index}
+                    handleDelete={handleDelete}
+                  ></MyToysRow>
                 ))}
               </tbody>
             </table>

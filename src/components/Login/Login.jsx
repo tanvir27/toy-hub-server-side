@@ -7,7 +7,7 @@ import { Toaster, toast } from "react-hot-toast";
 import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
-  const { LoginUser, googleLogin, githubLogin } = useContext(AuthContext);
+  const { LoginUser, googleLogin} = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();

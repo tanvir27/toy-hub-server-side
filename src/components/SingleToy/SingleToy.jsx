@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 const SingleToy = (props) => {
     const data = props.data;
-    console.log(data);
+    console.log(data.toyName);
   return (
     <div>
       <Modal
@@ -33,7 +33,7 @@ const SingleToy = (props) => {
             </div>
             <div className="col-md-6 ">
               <div className="card-body mt-3 text-center">
-                <h5 className="card-title fw-bold text-color">{data.name}</h5>
+                <h5 className="card-title fw-bold text-color">{data.toyName}</h5>
                 <div className=" mt-3">
                   <p className="card-title  ">
                     <i className="fw-bold">Seller Name :</i> {data.sellerName}

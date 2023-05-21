@@ -7,7 +7,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 import { toast } from "react-hot-toast";
-import logo from '../../../public/tohub-logo.png'
+import logo from "../../../public/tohub-logo.png";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -18,7 +18,7 @@ const Header = () => {
 
     logOut()
       .then(() => {
-        toast.success('Log Out Successfully !')
+        toast.success("Log Out Successfully !");
         navigate("/login");
       })
       .catch((error) => {
@@ -90,7 +90,6 @@ const Header = () => {
                         ? "active-link text-decoration-none me-4 py-2"
                         : "link text-decoration-none text-black me-4 py-2"
                     }
-                 
                     to="/myToys"
                   >
                     My Toys
