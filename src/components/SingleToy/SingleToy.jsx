@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 const SingleToy = (props) => {
     const data = props.data;
-    console.log(data.toyName);
+    // console.log(data.toyName);
   return (
     <div>
       <Modal

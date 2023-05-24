@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import useTitle from "../../hooks/useTitle";
-import { Link } from "react-router-dom";
+
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import MyToysRow from "./MyToysRow";
@@ -12,7 +12,10 @@ const MyToys = () => {
 
   // fetching data from db
   const [toysData, setToysData] = useState([]);
-  console.log(toysData);
+  // console.log(toysData);
+
+
+
 
   const url = `https://toy-hub-server-side-tanvir27.vercel.app/myToys?email=${user.email}`;
   useEffect(() => {
