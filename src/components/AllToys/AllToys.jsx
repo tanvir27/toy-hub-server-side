@@ -77,7 +77,7 @@ const AllToys = () => {
                   <td>{data.sellerName}</td>
                   <td>{data.toyName}</td>
                   <td>{data.subCategory}</td>
-                  <td>{data.price}</td>
+                  <td>$ {data.price}</td>
                   <td>{data.availableQuantity}</td>
                   <td>
                     <button

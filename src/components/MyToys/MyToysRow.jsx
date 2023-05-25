@@ -15,11 +15,14 @@ const MyToysRow = ({ toy, index, handleDelete }) => {
   // handle toy update
   const handleToyUpdate = (data) => {
     console.log(data);
-    fetch(`http://localhost:5000/updateToy/${data._id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://toy-hub-server-side-tanvir27.vercel.app/updateToy/${data._id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         if (result.modifiedCount > 0) {
@@ -38,7 +41,7 @@ const MyToysRow = ({ toy, index, handleDelete }) => {
       <td>{toy.sellerEmail}</td>
 
       <td>{toy.subCategory}</td>
-      <td>{toy.price}</td>
+      <td>$ {toy.price}</td>
       <td>{toy.rating}</td>
       <td>{toy.availableQuantity}</td>
       {/* <td>
