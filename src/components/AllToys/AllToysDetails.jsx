@@ -7,7 +7,7 @@ const AllToysDetails = (props) => {
   console.log(data.toyName);
   return (
     <div>
-      {/* <Modal
+      <Modal
         {...props}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
@@ -22,7 +22,7 @@ const AllToysDetails = (props) => {
             TOY Details
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body> */}
+        <Modal.Body>
           <div className="row ">
             <div className="col-md-6 p-3">
               <img
@@ -63,13 +63,13 @@ const AllToysDetails = (props) => {
               </div>
             </div>
           </div>
-        {/* </Modal.Body>
+        </Modal.Body>
         <div className="text-center my-3">
           <Button className="w-25 btn-info fw-bold" onClick={props.onHide}>
             Close
           </Button>
         </div>
-      </Modal> */}
+      </Modal>
     </div>
   );
 };

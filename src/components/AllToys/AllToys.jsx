@@ -1,32 +1,36 @@
 import React, { useEffect, useState } from "react";
 import useTitle from "../../hooks/useTitle";
 import { useLoaderData } from "react-router-dom";
-
+import AllToysDetails from "./AllToysDetails";
 
 const AllToys = () => {
   const toysData = useLoaderData();
   useTitle("All Toys");
-    let i = 1;
-    
-  const [searchedText, setSearchedText] = useState(" ");
+  let i = 1;
 
+  const [searchedText, setSearchedText] = useState("");
   const [toys, setToys] = useState(toysData);
+  const [selectedToy, setSelectedToy] = useState(null);
+  const [modalShow, setModalShow] = useState(false);
 
-  // search toy
-    const search = (event) => {
-      console.log(event.target.value);
-      const matchedName = toysData.filter((name) => {
-        console.log("Name: ", name);
-        return name.toyName
-          .toLowerCase()
-          .includes(event.target.value.toLowerCase());
-      });
-      console.log("matched data: ", matchedName);
-      setToys(matchedName);
-      setSearchedText(event.target.value);
-    };
+  // Search toy
+  const search = (event) => {
+    const searchText = event.target.value.toLowerCase();
+    const matchedName = toysData.filter((name) =>
+      name.toyName.toLowerCase().includes(searchText)
+    );
+    setToys(matchedName);
+    setSearchedText(event.target.value);
+  };
 
- 
+  const openDetailsModal = (toy) => {
+    setSelectedToy(toy);
+    setModalShow(true);
+  };
+
+  const closeDetailsModal = () => {
+    setModalShow(false);
+  };
 
   return (
     <div className="container">
@@ -38,7 +42,9 @@ const AllToys = () => {
           <form>
             <div className="form-control mx-auto">
               <div>
-                <p className="text-center fw-bold fs-5 text-color">Search Toy Here</p>
+                <p className="text-center fw-bold fs-5 text-color">
+                  Search Toy Here
+                </p>
               </div>
               <input
                 type="text"
@@ -65,7 +71,7 @@ const AllToys = () => {
               </tr>
             </thead>
             <tbody>
-              {toys.slice(0,20).map((data) => (
+              {toys.slice(0, 20).map((data) => (
                 <tr key={data.id}>
                   <td>{i++}</td>
                   <td>{data.sellerName}</td>
@@ -74,19 +80,13 @@ const AllToys = () => {
                   <td>{data.price}</td>
                   <td>{data.availableQuantity}</td>
                   <td>
-                    {/* {console.log("on map :", data)} */}
                     <button
                       type="button"
                       className="btn w-75 btn-info"
-                      onClick={() => setModalShow(true)}
+                      onClick={() => openDetailsModal(data)}
                     >
                       View Details
                     </button>
-                    {/* <AllToysDetails
-                      show={modalShow}
-                      onHide={() => setModalShow(false)}
-                      data={data}
-                    /> */}
                   </td>
                 </tr>
               ))}
@@ -94,6 +94,13 @@ const AllToys = () => {
           </table>
         </div>
       </div>
+      {selectedToy && (
+        <AllToysDetails
+          show={modalShow}
+          onHide={closeDetailsModal}
+          data={selectedToy}
+        />
+      )}
     </div>
   );
 };
