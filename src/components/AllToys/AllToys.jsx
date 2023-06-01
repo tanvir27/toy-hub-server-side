@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import useTitle from "../../hooks/useTitle";
 import { useLoaderData } from "react-router-dom";
 import AllToysDetails from "./AllToysDetails";
